@@ -1,63 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Portfolio de BALOGOU Eustache — développeur web junior et concepteur de solutions numériques au Bénin.">
+  <meta property="og:title" content="BALOGOU Eustache — Développeur web">
+  <meta property="og:description" content="Je conçois des expériences web utiles, soignées et accessibles. Découvrez mes projets et mon parcours.">
+  <title>BALOGOU Eustache — Développeur web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1 class="name"><a href="#">IDOS JACKSON</a></h1>
-            <ul class="linkPage">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="Accueil">
+      <span class="brand-mark">BE<span>.</span></span><span class="brand-name">BALOGOU <b>Eustache</b></span>
+    </a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#apropos">À propos</a><a href="#competences">Compétences</a><a href="#projets">Projets</a><a href="#parcours">Parcours</a>
+      <a class="nav-cta" href="#contact">Me contacter <span>↗</span></a>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home">
-            <span class="span1">Salut je m'appelle</span>
-            <span class="span2">IDOS JACKSON</span>
-            <span class="span3">Je suis Développeur</span>
-            <button>Voir mes Travaux</button>
-        </section>
+  <main>
+    <section class="hero section-wrap" id="accueil">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> BASÉ À COTONOU, BÉNIN <span class="eyebrow-line"></span> DISPONIBLE POUR OPPORTUNITÉS</div>
+        <h1>Je transforme<br>les idées en <em>expériences</em><br>numériques.</h1>
+        <p class="hero-lead">Je suis <strong>BALOGOU Eustache</strong>, développeur web junior. J'imagine et construis des interfaces et des applications qui répondent à des besoins concrets.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#projets">Explorer mes projets <span>↘</span></a><a class="text-link" href="mailto:eustachebalogou@gmail.com">Discutons ensemble <span>↗</span></a></div>
+        <div class="hero-meta"><span>WEB DEVELOPMENT</span><span>·</span><span>PRODUCT THINKING</span><span>·</span><span>CONTINUOUS LEARNING</span></div>
+      </div>
+      <div class="hero-art" aria-label="Monogramme BE">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <div class="hero-glow"></div><div class="hero-monogram">B<span>E</span><i>.</i></div>
+        <div class="floating-chip chip-top">const future = build();</div>
+        <div class="floating-chip chip-bottom"><span class="chip-dot"></span> Toujours en apprentissage</div>
+        <div class="art-index">01 / 04</div>
+      </div>
+      <a class="scroll-cue" href="#apropos"><span class="scroll-line"></span> DÉFILER POUR EXPLORER</a>
+    </section>
 
-        <hr>
+    <section class="intro section-wrap" id="apropos">
+      <div class="section-kicker">01 — QUI JE SUIS</div>
+      <div class="intro-grid">
+        <h2>La technologie<br>au service des <em>idées.</em></h2>
+        <div class="intro-text"><p>Diplômé d'une licence professionnelle en informatique appliquée à la gestion des entreprises, je m'intéresse à la création de produits numériques utiles : plateformes web, outils de gestion et expériences interactives.</p><p>J'aime passer de la compréhension d'un problème à une solution concrète. Je développe mes compétences en front-end, j'explore le back-end et je m'intéresse à la qualité logicielle, à la sécurité web et aux bonnes pratiques de livraison.</p><a class="inline-link" href="https://github.com/Idos2004" target="_blank" rel="noreferrer">Voir mon GitHub <span>↗</span></a></div>
+      </div>
+    </section>
 
-        <section id="about" class="about">
-            <img src="moi.png" alt="Photo d'Idos Jackson - développeur web">
-            <div class="about-content">
-                <h2>À propos</h2>
-                <p>Je suis un jeune développeur passionné de technologies et d'innovation. Mon objectif est de créer des expériences web interactives, intuitives et efficaces.</p>
-            </div>
-        </section>
+    <section class="skills section-wrap" id="competences">
+      <div class="section-kicker">02 — BOÎTE À OUTILS</div>
+      <div class="section-heading"><h2>Des bases solides.<br><em>Une progression continue.</em></h2><p>Les technologies et méthodes que j'utilise ou que j'explore actuellement.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card"><div class="skill-number">01</div><h3>Front-end</h3><p>Construire des interfaces responsive, accessibles et agréables à utiliser.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>TypeScript</span><span>Vite</span></div></article>
+        <article class="skill-card"><div class="skill-number">02</div><h3>Back-end</h3><p>Comprendre la logique serveur, structurer les applications et leurs échanges.</p><div class="tags"><span>Node.js</span><span>Express</span><span>Python</span><span>PHP</span><span>Laravel · notions</span><span>Django · notions</span></div></article>
+        <article class="skill-card"><div class="skill-number">03</div><h3>Données & conception</h3><p>Modéliser les besoins et organiser les données d'une application.</p><div class="tags"><span>MySQL</span><span>PostgreSQL · notions</span><span>Merise</span><span>UML</span></div></article>
+        <article class="skill-card"><div class="skill-number">04</div><h3>Qualité & outils</h3><p>Améliorer la fiabilité du code et progresser avec des workflows structurés.</p><div class="tags"><span>Git</span><span>GitHub</span><span>Vitest</span><span>ESLint</span><span>Prettier</span><span>GitHub Actions</span><span>CI/CD</span></div></article>
+      </div>
+      <p class="skills-note"><span>+</span> Exploration complémentaire : sécurité web (TryHackMe, Burp Suite), WordPress e-commerce et gestion de projet.</p>
+    </section>
 
-        <hr>
+    <section class="projects section-wrap" id="projets">
+      <div class="section-kicker">03 — SÉLECTION DE PROJETS</div>
+      <div class="section-heading projects-heading"><h2>Du concret,<br><em>pas seulement des idées.</em></h2><p>Une sélection de produits, prototypes et exercices. Les rôles indiqués distinguent mes contributions personnelles du travail collectif.</p></div>
+      <div class="project-list">
+        <article class="project-card project-featured">
+          <div class="project-visual visual-evento"><div class="visual-top"><span>EVENTO / PLATEFORME</span><span>01</span></div><div class="visual-window"><div class="window-bar"><i></i><i></i><i></i><b>evento.app</b></div><div class="window-content"><div class="window-label">ÉVÉNEMENTS • COMMUNAUTÉ</div><div class="window-title">Créer. Organiser.<br><strong>Rassembler.</strong></div><div class="window-pill">Découvrir les événements&nbsp; ↗</div><div class="window-circles"><i></i><i></i><i></i></div></div></div></div>
+          <div class="project-info"><div class="project-type">PLATEFORME NUMÉRIQUE <span>PROJET EN COURS</span></div><h3>EVENTO</h3><p>Une plateforme dédiée à la gestion et à la découverte d'événements. Un projet ambitieux qui m'a amené à réfléchir à des parcours utilisateurs, des interfaces multiples et à l'organisation d'un produit numérique complexe.</p><div class="project-role"><b>Contribution</b> Conception et structuration du projet, travail sur les interfaces et les exigences fonctionnelles.</div><div class="tags"><span>Next.js</span><span>Web app</span><span>Product design</span></div><a class="project-link" href="https://evento-qkdi.vercel.app/" target="_blank" rel="noreferrer">Voir le projet en ligne <span>↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-visual visual-agri"><div class="visual-top"><span>AGRIMARKET / MARKETPLACE</span><span>02</span></div><div class="agri-scene"><div class="agri-badge">AGRI<br>MARKET</div><div class="produce p1">✳</div><div class="produce p2">✿</div><div class="produce p3">●</div><div class="agri-caption">Connecter les acteurs<br>du monde agricole.</div></div></div>
+          <div class="project-info"><div class="project-type">MARKETPLACE <span>APPLICATION DÉPLOYÉE</span></div><h3>AgriMarket</h3><p>Une expérience de marketplace autour des produits agricoles, pensée pour faciliter la mise en relation et la découverte de l'offre.</p><div class="project-role"><b>Contribution</b> Développement et expérimentation du produit numérique.</div><div class="tags"><span>Vite</span><span>Web</span><span>Marketplace</span></div><a class="project-link" href="https://agrimarket-tawny.vercel.app/" target="_blank" rel="noreferrer">Voir le projet en ligne <span>↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-visual visual-sportivo"><div class="visual-top"><span>SPORTIVO / SPORT</span><span>03</span></div><div class="sport-ball">S</div><div class="sport-lines"></div><div class="sport-caption">MOVE WITH<br><b>PASSION.</b></div></div>
+          <div class="project-info"><div class="project-type">PRODUIT WEB <span>PROTOTYPE DÉPLOYÉ</span></div><h3>Sportivo</h3><p>Un projet web orienté sport, qui illustre mon exploration de la conception et du déploiement d'applications modernes.</p><div class="project-role"><b>Contribution</b> Projet personnel en développement — détails fonctionnels à enrichir.</div><div class="tags"><span>Next.js</span><span>Web app</span></div><a class="project-link" href="https://sportivo-gold.vercel.app/" target="_blank" rel="noreferrer">Voir le projet en ligne <span>↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-visual visual-eclat"><div class="visual-top"><span>ÉCLAT SURPRISES / CRÉATIF</span><span>04</span></div><div class="eclat-card"><div class="eclat-star">✳</div><div class="eclat-script">Une pensée<br>qui fait plaisir.</div><div class="eclat-foot">UNE SURPRISE À PARTAGER</div></div></div>
+          <div class="project-info"><div class="project-type">EXPÉRIENCE INTERACTIVE <span>APPLICATION DÉPLOYÉE</span></div><h3>Éclat Surprises</h3><p>Une expérience web créative autour des cartes et messages personnalisés, avec une attention portée à l'émotion et au partage.</p><div class="project-role"><b>Contribution</b> Conception et réalisation d'une expérience web interactive.</div><div class="tags"><span>Web</span><span>Interaction</span><span>Créativité</span></div><a class="project-link" href="https://eclat-surprises.vercel.app/" target="_blank" rel="noreferrer">Voir le projet en ligne <span>↗</span></a></div>
+        </article>
+        <article class="project-card project-wide">
+          <div class="project-visual visual-gestion"><div class="visual-top"><span>GESTIONTEMPS / FRONT-END</span><span>05</span></div><div class="dashboard"><div class="dash-side"><b>GT.</b><i></i><i></i><i></i></div><div class="dash-main"><div class="dash-heading">Mon espace de gestion</div><div class="dash-stats"><i></i><i></i><i></i></div><div class="dash-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div>
+          <div class="project-info"><div class="project-type">APPLICATION FRONT-END <span>PROJET TECHNIQUE</span></div><h3>gestionTemps</h3><p>Application front-end construite avec React, TypeScript et Vite. Le projet intègre une démarche de qualité avec Vitest, ESLint, Prettier et GitHub Actions pour automatiser lint, tests et build.</p><div class="project-role"><b>Contribution</b> Développement front-end et mise en place des contrôles qualité/CI.</div><div class="tags"><span>React</span><span>TypeScript</span><span>Vitest</span><span>GitHub Actions</span></div><a class="project-link" href="https://github.com/Idos2004/gestionTemps" target="_blank" rel="noreferrer">Voir le code source <span>↗</span></a></div>
+        </article>
+      </div>
+      <div class="more-projects"><span>À EXPLORER ÉGALEMENT</span><a href="https://github.com/Idos2004" target="_blank" rel="noreferrer">SIRADn · Eloquent · Sites web · Expérimentations <b>↗</b></a></div>
+    </section>
 
-        <section id="projects" class="projects">
-            <h2>PROJECTS</h2>
-            <ul class="listProjet">
-                <li>Projet One</li>
-                <li>Projet Two</li>
-                <li>Projet Three</li>
-            </ul>
-        </section>
+    <section class="journey section-wrap" id="parcours">
+      <div class="section-kicker">04 — PARCOURS</div>
+      <div class="journey-grid"><div><h2>Apprendre.<br><em>Construire. Évoluer.</em></h2><p class="journey-lead">Une formation en informatique de gestion, complétée par des projets pratiques et une démarche d'apprentissage continu.</p></div>
+      <div class="timeline">
+        <article><span class="timeline-date">2023 — 2026</span><div><h3>Licence professionnelle — IAGE</h3><p>Université Polytechnique Internationale Obiang Nguema N'Bassogo (UPI-ONM). Diplôme obtenu en juin 2026.</p><small>Programmation · Bases de données · Merise · UML · Réseaux · Génie logiciel</small></div></article>
+        <article><span class="timeline-date">2022 — 2023</span><div><h3>Baccalauréat — Série C</h3><p>Formation scientifique, raisonnement et bases mathématiques.</p></div></article>
+        <article><span class="timeline-date">EN CONTINU</span><div><h3>Formations complémentaires</h3><p>Gestion de projet (FUN MOOC, Novasavo), CI/CD, WordPress e-commerce, sécurité web (TryHackMe, Burp Suite), Git et GitHub.</p></div></article>
+      </div></div>
+      <div class="languages"><span>LANGUES</span><p>Français <b>Courant</b> · Yoruba, Nago, Idaatcha, Bariba <b>Courant</b> · Anglais <b>Lecture technique intermédiaire</b></p></div>
+    </section>
 
-        <hr>
-
-        <section id="contact" class="contact">
-            <h2>CONTACT</h2>
-            <p>Vous pouvez me contacter via email, WhatsApp ou téléphone. Vous pouvez également nous suivre sur les réseaux sociaux.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 IDOS JACKSON. Tous droits réservés.</p>
-    </footer>
+    <section class="contact section-wrap" id="contact">
+      <div class="section-kicker">05 — ET SI ON ÉCHANGEAIT ?</div>
+      <div class="contact-panel"><div class="contact-orb"></div><div class="contact-content"><span class="contact-overline">OUVERT AUX OPPORTUNITÉS ET COLLABORATIONS</span><h2>Une idée à<br>faire <em>grandir ?</em></h2><p>Je suis ouvert aux échanges autour du développement web, aux collaborations sur des projets numériques et aux opportunités professionnelles.</p><a class="button button-primary" href="mailto:eustachebalogou@gmail.com?subject=Prise%20de%20contact%20%E2%80%94%20Portfolio">Écrire un e-mail <span>↗</span></a></div><div class="contact-side"><span>CONTACT DIRECT</span><a href="mailto:eustachebalogou@gmail.com">eustachebalogou@gmail.com ↗</a><a href="https://github.com/Idos2004" target="_blank" rel="noreferrer">github.com/Idos2004 ↗</a><small>Cotonou, Bénin</small></div></div>
+    </section>
+  </main>
+  <footer class="footer section-wrap"><a class="brand" href="#accueil"><span class="brand-mark">BE<span>.</span></span><span class="brand-name">BALOGOU <b>Eustache</b></span></a><span>CONÇU AVEC INTENTION · © <span id="year">2026</span></span><a href="#accueil">RETOUR EN HAUT ↑</a></footer>
 </body>
 </html>
