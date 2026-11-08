@@ -1,4 +1,32 @@
-const toggle=document.querySelector('.menu-toggle');const links=document.querySelector('.nav-links');if(toggle&&links){toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));}
-document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.project-card').forEach(card=>{card.hidden=filter!=='all'&&!card.dataset.category.split(' ').includes(filter);});}));
-const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();
-const revealTargets=document.querySelectorAll('.section-label,.about-grid,.stack-card,.project-card,.timeline-item,.contact-wrap h2');revealTargets.forEach(el=>el.classList.add('reveal'));if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});revealTargets.forEach(el=>observer.observe(el));}else{revealTargets.forEach(el=>el.classList.add('visible'));}
+(() => {
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+  menuButton?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("open") ?? false;
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+  });
+  nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Ouvrir le menu");
+  }));
+  const revealTargets = document.querySelectorAll(".section-label, .about-grid, .stack-card, .project-card, .timeline-item, .languages, .contact-wrap > *");
+  revealTargets.forEach((element) => element.classList.add("reveal"));
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, currentObserver) => entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add("visible"); currentObserver.unobserve(entry.target); }
+    }), { threshold: 0.12 });
+    revealTargets.forEach((element) => observer.observe(element));
+  } else revealTargets.forEach((element) => element.classList.add("visible"));
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+  filterButtons.forEach((button) => button.addEventListener("click", () => {
+    filterButtons.forEach((item) => { item.classList.remove("active"); item.setAttribute("aria-pressed", "false"); });
+    button.classList.add("active"); button.setAttribute("aria-pressed", "true");
+    const filter = button.dataset.filter;
+    projectCards.forEach((card) => { card.hidden = filter !== "all" && !(card.dataset.category || "").split(" ").includes(filter); });
+  }));
+  const year = document.querySelector("#year");
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
