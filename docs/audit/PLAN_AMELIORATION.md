@@ -50,3 +50,5 @@ Légende : **P0** critique · **P1** important · **P2** optimisation · **P3** 
 | 24 | La démo EVENTO dépend d'une API en hébergement gratuit (catalogue indisponible lors des captures). | Réveiller l'API avant un entretien, ou passer à un hébergement permanent. | À prévoir |
 | 25 | Le dépôt public d'Éclat Surprises s'appelle `anniversaire-`. | Le renommer (par exemple `eclat-surprises`) ; GitHub redirige l'ancien lien. | Décision requise |
 | 26 | Version anglaise, thème clair, études de cas détaillées, galerie de captures. | Améliorations utiles mais non indispensables. | Non réalisé |
+| 27 | L'APK d'Éloquence publié est une version de test (« debug »), signée avec une clé de développement. | Produire une version signée avec votre propre clé (`assembleRelease`) et remplacer `downloads/`. Une version signée ne pourra pas mettre à jour la version de test : il faudra la désinstaller d'abord. | À prévoir |
+| 28 | La page d'accueil de boutique.karabengo.com est vide (menu et panier seulement) ; le portfolio pointe donc vers la page Boutique. | Dans WordPress, définir la page Boutique comme page d'accueil (Réglages → Lecture). | À prévoir |

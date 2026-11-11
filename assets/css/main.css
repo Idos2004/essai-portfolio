@@ -957,6 +957,7 @@ button {
 .tint-agrimarket { --tint: #2e3a1f; }
 .tint-sportivo { --tint: #1d2e44; }
 .tint-eclat { --tint: #3a2440; }
+.tint-bengo { --tint: #3a1f3a; }
 
 .browser {
   overflow: hidden;
@@ -1018,6 +1019,45 @@ button {
   aspect-ratio: 390 / 844;
   object-fit: cover;
   object-position: top;
+}
+
+/* Application mobile : plusieurs écrans côte à côte, sans cadre de navigateur */
+.tint-eloquence { --tint: #3a3220; }
+
+.project-media--app {
+  padding-bottom: clamp(1.25rem, 0.75rem + 2.5vw, 2.25rem);
+}
+
+.app-screens {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(0.6rem, 0.3rem + 1.5vw, 1.25rem);
+  width: 100%;
+}
+
+.phone--inline {
+  position: static;
+  flex: 0 1 auto;
+  width: clamp(5.5rem, 30%, 10.5rem);
+}
+
+.phone--inline:nth-child(2) {
+  margin-bottom: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+}
+
+.phone--inline img {
+  aspect-ratio: 482 / 972;
+}
+
+.apk-note {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  overflow-wrap: anywhere;
+}
+
+.apk-note code {
+  font-family: var(--font-mono);
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -1173,6 +1213,21 @@ button {
     order: 2;
     border-right: 0;
     border-left: 1px solid var(--line);
+  }
+}
+
+/* Grand écran : les petites cartes passent à trois par rangée */
+@media (min-width: 64em) {
+  .project-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .project {
+    grid-column: span 2;
+  }
+
+  .project--featured {
+    grid-column: 1 / -1;
   }
 }
 

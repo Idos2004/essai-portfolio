@@ -53,6 +53,8 @@ Mesures du harnais `tests/qa.mjs` (Playwright, axe-core, Lighthouse), sur la mê
 - Compétences classées selon l'usage réel : « Utilisé en projet », « En progression », « Notions ».
 - Usage des assistants de code IA mentionné.
 - Profil LinkedIn ajouté : contact, pied de page, CV et données structurées.
+- Éloquence promue en grande carte : 3 captures fournies par vous (barres système du téléphone retirées, contenu intact), APK de test téléchargeable (version 1.1.0, Android 7.0+, empreinte SHA-256 affichée).
+- Boutique Bengo ajoutée : boutique WordPress/WooCommerce de dropshipping menée avec vos frères, captures réelles prises sur le site, rôle confirmé par vous.
 
 **Photographies et captures.**
 - Portrait studio sans photomontage, optimisé en WebP (14,6 Ko).
