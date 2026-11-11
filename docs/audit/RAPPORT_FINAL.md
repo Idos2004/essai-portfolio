@@ -14,7 +14,7 @@ Mesures du harnais `tests/qa.mjs` (Playwright, axe-core, Lighthouse), sur la mê
 | Premier affichage / plus grand élément (mobile) | 3,3 s / 3,3 s | **1,4 s / 2,1 s** |
 | Décalage de mise en page (CLS) desktop | 0,006 | **0** |
 | Violations axe-core (WCAG 2.2 AA) | 16 nœuds (contraste) + 1 (CV) | **0** sur les 3 pages, à 390 et 1440 px |
-| Liens externes en erreur | 1 sur 8 | **0 sur 10** |
+| Liens externes en erreur | 1 sur 8 | **0 sur 10** testés (LinkedIn à vérifier à la main) |
 | Erreurs console et requêtes en échec | 1 (favicon du CV) | **0** |
 | Débordement horizontal (5 largeurs, de 360 à 1440 px) | aucun | aucun |
 | CV imprimé (A4) | 2 pages | **1 page** |
@@ -52,6 +52,7 @@ Mesures du harnais `tests/qa.mjs` (Playwright, axe-core, Lighthouse), sur la mê
 - Application Android « Éloquence » ajoutée ; fonction réelle de gestionTemps décrite.
 - Compétences classées selon l'usage réel : « Utilisé en projet », « En progression », « Notions ».
 - Usage des assistants de code IA mentionné.
+- Profil LinkedIn ajouté : contact, pied de page, CV et données structurées.
 
 **Photographies et captures.**
 - Portrait studio sans photomontage, optimisé en WebP (14,6 Ko).
@@ -95,11 +96,11 @@ L'orchestrateur a tenu les rôles d'architecte, d'auditeur technique, de directi
 - Validation HTML (html-validate, configuration dans `tests/.htmlvalidate.json`) : 0 erreur. Validation CSS (csstree) : 0 erreur sur `main.css` ; 1 faux positif sur `cv.css` (`margin` dans `@page`, propriété standard).
 - Contrôle visuel des captures à 1440 et 390 px, ainsi que du rendu imprimé du CV.
 
-**Limites.** Tests effectués avec Chromium uniquement : WebKit (Safari) et Firefox ne sont pas installés sur la machine, et aucun appareil réel n'a été testé. Les en-têtes de sécurité et de cache ne s'appliqueront qu'après déploiement sur Vercel.
+**Limites.** Tests effectués avec Chromium uniquement : WebKit (Safari) et Firefox ne sont pas installés sur la machine, et aucun appareil réel n'a été testé. Les en-têtes de sécurité et de cache ne s'appliqueront qu'après déploiement sur Vercel. Le lien LinkedIn n'est pas testé automatiquement, LinkedIn refusant ce type de requêtes : il est à vérifier à la main.
 
 ## 5. Points restant à valider
 
 Voir les éléments 19 à 26 de [PLAN_AMELIORATION.md](PLAN_AMELIORATION.md), notamment :
 - désactiver GitHub Pages avant de fusionner ;
-- confirmer votre rôle sur Sportivo ;
+- retrouver le dépôt de Sportivo (Vercel → Settings → Git) ;
 - valider la mention de l'assistance IA.

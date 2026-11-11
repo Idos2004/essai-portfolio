@@ -326,9 +326,14 @@ async function interactions(page, url) {
   return out;
 }
 
+// Sites qui refusent les requetes automatisees (LinkedIn : code 999 ou page de connexion) :
+// leurs liens sont signales « non verifie » au lieu d'etre testes. A verifier a la main.
+const NOT_CHECKED = [/(^|\.)linkedin\.com$/i];
+
 async function checkExternal(urls) {
   const res = [];
   const one = async (u) => {
+    if (NOT_CHECKED.some((re) => re.test(new URL(u).hostname))) { res.push({ url: u, status: null, note: 'non verifie : site hostile aux requetes automatisees, a tester a la main' }); return; }
     const t = async (method) => {
       const c = new AbortController(); const to = setTimeout(() => c.abort(), 10000);
       try { const r = await fetch(u, { method, redirect: 'follow', signal: c.signal, headers: { 'User-Agent': UA, Accept: '*/*' } }); return r.status; }
@@ -438,8 +443,10 @@ function toMarkdown(R) {
     L.push('');
   }
   L.push('## Fichiers racine', '', `robots.txt : ${R.files.robots ? 'present' : 'ABSENT'} ; sitemap.xml : ${R.files.sitemap ? 'present' : 'ABSENT'} ; 404.html : ${R.files.notFound ? 'present' : 'absent'}`, '');
-  L.push('## Liens externes', '', `${R.external.length} uniques, ${R.external.filter((e) => e.status >= 400 || e.status === 0).length} en erreur.`, '');
-  R.external.forEach((e) => L.push(`- ${e.status}${e.error ? ' ' + e.error : ''} ${e.url}`));
+  const extSkipped = R.external.filter((e) => e.status === null).length;
+  const extErrors = R.external.filter((e) => e.status !== null && (e.status >= 400 || e.status === 0)).length;
+  L.push('## Liens externes', '', `${R.external.length} uniques, ${extErrors} en erreur${extSkipped ? `, ${extSkipped} non verifie(s)` : ''}.`, '');
+  R.external.forEach((e) => L.push(`- ${e.status ?? '—'}${e.error ? ' ' + e.error : ''}${e.note ? ' (' + e.note + ')' : ''} ${e.url}`));
   return L.join('\n') + '\n';
 }
 
