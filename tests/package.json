@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-qa",
+  "private": true,
+  "description": "Outils de contrôle qualité du portfolio (non déployés).",
+  "type": "module",
+  "scripts": {
+    "qa": "node qa.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "playwright": "^1.65.0"
+  }
+}
